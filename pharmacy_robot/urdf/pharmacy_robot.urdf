@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="pharmacy_robot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.686728203631121 -0.924762250922737 0.509831812480349"
+        rpy="0 0 0" />
+      <mass
+        value="171.2501252375" />
+      <inertia
+        ixx="11.8814708114873"
+        ixy="9.57486043576266E-15"
+        ixz="1.04923567784857E-13"
+        iyy="255.922820152329"
+        iyz="1.63916957543832E-15"
+        izz="246.560343305852" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pharmacy_robot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pharmacy_robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="robot_base_link">
+    <inertial>
+      <origin
+        xyz="-0.175 0 0.0120870101207896"
+        rpy="0 0 0" />
+      <mass
+        value="32.8954651519711" />
+      <inertia
+        ixx="0.877383355888658"
+        ixy="-2.18203315235437E-17"
+        ixz="1.06894368199216E-17"
+        iyy="0.805184572091842"
+        iyz="2.4743704257084E-17"
+        izz="0.730376858947681" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pharmacy_robot/meshes/robot_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pharmacy_robot/meshes/robot_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="robot_base"
+    type="prismatic">
+    <origin
+      xyz="-0.36327 -0.92476 0.71011"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="robot_base_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="2.4"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="vertical_rail_link">
+    <inertial>
+      <origin
+        xyz="3.33066907387547E-16 2.22044604925031E-16 0.453089887640449"
+        rpy="0 0 0" />
+      <mass
+        value="34.9502182711865" />
+      <inertia
+        ixx="3.59278110132393"
+        ixy="-3.3033799663625E-17"
+        ixz="-5.90617627192506E-16"
+        iyy="3.59278110132393"
+        iyz="-1.88243602498197E-16"
+        izz="0.196840414701486" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pharmacy_robot/meshes/vertical_rail_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pharmacy_robot/meshes/vertical_rail_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="vertical_rail"
+    type="revolute">
+    <origin
+      xyz="-0.175 0 0.275"
+      rpy="0 0 0" />
+    <parent
+      link="robot_base_link" />
+    <child
+      link="vertical_rail_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="1.57"
+      effort="10"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="prismatic_base_link">
+    <inertial>
+      <origin
+        xyz="1.58935575920172E-05 -0.060374142004315 -0.075"
+        rpy="0 0 0" />
+      <mass
+        value="15.5496405992668" />
+      <inertia
+        ixx="0.584009084266603"
+        ixy="0.000101296652938899"
+        ixz="2.70619018889306E-17"
+        iyy="0.19921807382876"
+        iyz="6.548462464122E-17"
+        izz="0.726124015718573" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pharmacy_robot/meshes/prismatic_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pharmacy_robot/meshes/prismatic_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="prismatic_base"
+    type="prismatic">
+    <origin
+      xyz="0 0 0.15004"
+      rpy="0 0 0" />
+    <parent
+      link="vertical_rail_link" />
+    <child
+      link="prismatic_base_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.75"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="prismatic_arm_link">
+    <inertial>
+      <origin
+        xyz="-5.77689832000905E-05 0.219444436840571 0"
+        rpy="0 0 0" />
+      <mass
+        value="4.41786466911064" />
+      <inertia
+        ixx="0.0853660254082541"
+        ixy="2.06554982950845E-05"
+        ixz="1.14451619888356E-19"
+        iyy="0.00690291898306744"
+        iyz="3.74235813326644E-18"
+        izz="0.0853660308458361" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pharmacy_robot/meshes/prismatic_arm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pharmacy_robot/meshes/prismatic_arm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="prismatic_arm"
+    type="prismatic">
+    <origin
+      xyz="0.000177712539754293 -0.675068627586492 -0.0750000000000046"
+      rpy="0 0 0" />
+    <parent
+      link="prismatic_base_link" />
+    <child
+      link="prismatic_arm_link" />
+    <axis
+      xyz="0.000263251062684053 -0.999999965349439 0" />
+    <limit
+      lower="0"
+      upper="0.5"
+      effort="10"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="gripper_base_link">
+    <inertial>
+      <origin
+        xyz="-2.19910948704438E-05 0.0835365824712644 0"
+        rpy="0 0 0" />
+      <mass
+        value="1.00629139685298" />
+      <inertia
+        ixx="0.00223882461755945"
+        ixy="2.90039858508858E-07"
+        ixz="1.40157861258722E-20"
+        iyy="0.00113706333537354"
+        iyz="3.27164682730202E-20"
+        izz="0.00223882469391275" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pharmacy_robot/meshes/gripper_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pharmacy_robot/meshes/gripper_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper_base"
+    type="revolute">
+    <origin
+      xyz="3.94876594029814E-05 -0.149999994802416 0"
+      rpy="0 0 0" />
+    <parent
+      link="prismatic_arm_link" />
+    <child
+      link="gripper_base_link" />
+    <axis
+      xyz="0.000263251062684053 -0.999999965349439 0" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="10"
+      velocity="0.5" />
+  </joint>
+</robot>
