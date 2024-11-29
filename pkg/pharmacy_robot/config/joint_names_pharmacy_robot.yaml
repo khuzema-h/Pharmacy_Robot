@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'robot_base', 'vertical_rail', 'prismatic_base', 'prismatic_arm', 'gripper_base', ]
