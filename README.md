@@ -31,6 +31,15 @@ After Building and Sourcing the Workspace, Launch the Pharmacy Robot:
 ```sh
 ros2 launch pharmacy_robot gazebo_launch.py
 ```
+## Run Scanner Node
+
+Open a Separate Terminal Window after Launching the robot in Gazebo to run the Scanner to read QR codes:
+
+```sh
+ros2 run pharmacy_robot scanner.py
+```
+![image](https://github.com/user-attachments/assets/ddaca3d2-5588-45ae-a0d4-5ac14c74bd46)
+
 Open a Separate Terminal Window to visualize the camera feed in Rviz.
 
 Run rviz:
