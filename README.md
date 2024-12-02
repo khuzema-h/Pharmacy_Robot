@@ -10,7 +10,7 @@ You should only have to do this once per install.
 ```sh
 mkdir -p dev_ws/src
 cd dev_ws/src
-git clone https://github.com/khuzema-h/Pharmacy_Robot.git
+git clone -b playground https://github.com/khuzema-h/Pharmacy_Robot.git
 cd ..
 rosdep install --from-path src --ignore-src -yi
 colcon build

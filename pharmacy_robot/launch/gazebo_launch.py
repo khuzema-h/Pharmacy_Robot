@@ -12,7 +12,7 @@ from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     # Paths to URDF and World files
-    urdf_file_name = 'pharmacy_robot.urdf.xacro'  # Change to your URDF filename
+    urdf_file_name = 'pharmacy_gripper.xacro'  # Change to your URDF filename
     urdf = os.path.join(get_package_share_directory('pharmacy_robot'), 'urdf', urdf_file_name)
     world_file_name = 'pr_world.world'  # Change to your custom world file name
     world = os.path.join(get_package_share_directory('pharmacy_robot'), 'worlds', world_file_name)
@@ -31,7 +31,7 @@ def generate_launch_description():
 
     # Launch Arguments
     ld.add_action(DeclareLaunchArgument('use_sim_time', default_value='true', description='Use simulation time if true'))
-    ld.add_action(DeclareLaunchArgument('robot_urdf', default_value=urdf, description='pharmacy_robot/urdf/pharmacy_robot.urdf.xacro'))
+    ld.add_action(DeclareLaunchArgument('robot_urdf', default_value=urdf, description='pharmacy_robot/urdf/pharmacy_gripper.xacro'))
 
     # Gazebo server launch with the custom world
     gazebo_server = IncludeLaunchDescription(
