@@ -72,7 +72,7 @@
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="1 0 1 0.5" />
       </material>
     </visual>
     <collision>
@@ -93,7 +93,17 @@
   <limit lower="0" upper="2.4" effort="1000" velocity="1" />
   <dynamics damping="5" friction="3" />
 </joint>
-
+<!-- Add transmission for prismatic_base joint -->
+  <transmission name="prismatic_base_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="prismatic_base">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="prismatic_base_motor">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="vertical_rail_link">
     <inertial>
@@ -331,6 +341,17 @@
       velocity="0.5" />
       <dynamics damping="5" friction="3" />
   </joint>
+  <!-- Add transmission for gripper_base joint -->
+  <transmission name="gripper_base_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="gripper_base">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="gripper_base_motor">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="camera_link">
     <inertial>
@@ -418,5 +439,10 @@
       </plugin>
     </sensor>
   </gazebo>  
+
+  <!-- Gazebo plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/>
+  </gazebo>
         
 </robot>

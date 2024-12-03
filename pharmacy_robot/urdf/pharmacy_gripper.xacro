@@ -517,6 +517,18 @@
 		<dynamics damping="5" friction="3" />
 	</joint>
 
+	<!-- Add transmission for robot_base joint -->
+  <transmission name="robot_base_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robot_base">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="robot_base_motor">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
 	<joint name="vertical_rail" type="revolute">
 		<origin
 		xyz="-0.175 0 0.275"
@@ -534,6 +546,17 @@
 		velocity="0.5" />
 		<dynamics damping="5" friction="3" />
   	</joint>
+	<!-- Add transmission for vertical_rail joint -->
+  <transmission name="vertical_rail_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="vertical_rail">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="revolute_base_motor">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 
 	<joint
 		name="prismatic_base"
@@ -555,6 +578,19 @@
 		<dynamics damping="5" friction="3" />
 	</joint>
 
+	<!-- Add transmission for prismatic_base joint -->
+  <transmission name="prismatic_base_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="prismatic_base">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="prismatic_base_motor">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
 	<joint
 		name="prismatic_arm"
 		type="prismatic">
@@ -574,6 +610,17 @@
 		velocity="0.1" />
 		<dynamics damping="5" friction="3" />
 	</joint>
+	<!-- Add transmission for prismatic_base joint -->
+  <transmission name="prismatic_arm_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="prismatic_arm">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="prismatic_arm_motor">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 
 	<joint
 		name="gripper_base_"
@@ -594,6 +641,17 @@
 		velocity="0.5" />
 		<dynamics damping="5" friction="3" />
 	</joint>
+	<!-- Add transmission for prismatic_base joint -->
+  <transmission name="gripper_base_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="gripper_base">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="gripper_base_motor">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 
 	<joint
 		name="camera"
@@ -624,6 +682,18 @@
         <limit lower="0.0" upper="0.8" velocity="0.5" effort="50" />
     </joint>
 
+	<!-- Add transmission for robotiq_85_left_knuckle_joint joint -->
+  <transmission name="robotiq_85_left_knuckle_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robotiq_85_left_knuckle_joint">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="robotiq_85_left_knuckle_joint_motor">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
     <joint name="robotiq_85_right_knuckle_joint" type="revolute">
         <parent link="robotiq_85_base_link" />
         <child link="robotiq_85_right_knuckle_link" />
@@ -632,6 +702,18 @@
         <limit lower="-0.8" upper="0.0" velocity="0.5" effort="50" />
         <mimic joint="robotiq_85_left_knuckle_joint" multiplier="-1" />
     </joint>
+<!-- Add transmission for robotiq_85_right_knuckle_joint joint -->
+  <transmission name="robotiq_85_right_knuckle_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="robotiq_85_right_knuckle_joint">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="robotiq_85_right_knuckle_joint_motor">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
 
     <joint name="robotiq_85_left_finger_joint" type="fixed">
         <parent link="robotiq_85_left_knuckle_link" />
@@ -676,5 +758,9 @@
         <origin xyz="-0.00563134 0.0 0.04718515" rpy="0 0 0" />
         <mimic joint="robotiq_85_left_knuckle_joint" />
     </joint>
+	<!-- Gazebo plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/>
+  </gazebo>
   
 </robot>

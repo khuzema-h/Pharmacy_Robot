@@ -22,6 +22,12 @@ def generate_launch_description():
         get_package_share_directory('pharmacy_robot'),
         'models'
     )
+    # Path to the controller YAML file
+    controller_config = os.path.join(
+    get_package_share_directory('pharmacy_robot'),  # Replace with your package name
+    'config',
+    'controller.yaml'  # Adjust if the file is in a different location
+)
     
     # Add the custom model path to GAZEBO_MODEL_PATH
     os.environ['GAZEBO_MODEL_PATH'] = custom_model_path
@@ -68,14 +74,21 @@ def generate_launch_description():
         arguments=['joint_state_broadcaster'],
         output='screen'
     )
-
-    # Controller Spawner for your robot's controller (e.g., position or velocity controllers)
-    spawner_robot_controller = Node(
+      # Nodes
+    controller_manager_node = Node(
         package='controller_manager',
-        executable='spawner',
-        arguments=['your_robot_controller'],  # Change this to your specific controller name
+        executable='ros2_control_node',
+        parameters=[controller_config],
         output='screen'
     )
+
+    spawner_robot_controller = Node(
+    package='controller_manager',
+    executable='spawner',
+    arguments=['position_controller'],  # Replace with your controller name
+    output='screen',
+    parameters=[controller_config]  # Pass the YAML file as a parameter
+)
 
     # Spawn entity node to spawn the URDF model into the Gazebo simulation
     spawn_entity = Node(
@@ -91,6 +104,7 @@ def generate_launch_description():
     ld.add_action(gazebo_server)
     ld.add_action(gazebo_client)
     ld.add_action(robot_state_publisher)
+    ld.add_action(controller_manager_node)
 
     # Add a small delay before spawning the robot to ensure Gazebo is ready
     ld.add_action(TimerAction(
