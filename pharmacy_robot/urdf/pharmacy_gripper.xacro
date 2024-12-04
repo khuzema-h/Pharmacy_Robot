@@ -713,6 +713,7 @@
         <axis xyz="0 -1 0" />
         <origin xyz="0.03060114 0.0 0.05490452" rpy="0 0 0" />
         <limit lower="0.0" upper="0.8" velocity="0.5" effort="50" />
+		<dynamics damping="5" friction="3" />
     </joint>
 
 	<!-- Add transmission for robotiq_85_left_knuckle_joint joint -->
@@ -734,6 +735,7 @@
         <origin xyz="-0.03060114 0.0 0.05490452" rpy="0 0 0" />
         <limit lower="-0.8" upper="0.0" velocity="0.5" effort="50" />
         <mimic joint="robotiq_85_left_knuckle_joint" multiplier="-1" />
+		<dynamics damping="5" friction="3" />
     </joint>
 <!-- Add transmission for robotiq_85_right_knuckle_joint joint -->
   <transmission name="robotiq_85_right_knuckle_joint_trans">
@@ -766,6 +768,7 @@
         <axis xyz="0 -1 0" />
         <origin xyz="0.0127 0.0 0.06142" rpy="0 0 0" />
         <mimic joint="robotiq_85_left_knuckle_joint" />
+		<dynamics damping="5" friction="3" />
     </joint>
 
     <joint name="robotiq_85_right_inner_knuckle_joint" type="continuous">
@@ -774,6 +777,7 @@
         <axis xyz="0 -1 0" />
         <origin xyz="-0.0127 0.0 0.06142" rpy="0 0 0" />
         <mimic joint="robotiq_85_left_knuckle_joint" multiplier="-1" />
+		<dynamics damping="5" friction="3" />
     </joint>
 
     <joint name="robotiq_85_left_finger_tip_joint" type="continuous">
@@ -782,6 +786,7 @@
         <axis xyz="0 -1 0" />
         <origin xyz="0.00563134 0.0 0.04718515" rpy="0 0 0" />
         <mimic joint="robotiq_85_left_knuckle_joint" multiplier="-1" />
+		<dynamics damping="5" friction="3" />
     </joint>
 
     <joint name="robotiq_85_right_finger_tip_joint" type="continuous">
@@ -790,6 +795,7 @@
         <axis xyz="0 -1 0" />
         <origin xyz="-0.00563134 0.0 0.04718515" rpy="0 0 0" />
         <mimic joint="robotiq_85_left_knuckle_joint" />
+		<dynamics damping="5" friction="3" />
     </joint>
 	<!-- Gazebo plugin -->
   <gazebo>
