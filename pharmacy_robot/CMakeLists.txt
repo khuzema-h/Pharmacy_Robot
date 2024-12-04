@@ -17,6 +17,7 @@ meshes
 launch
 worlds
 models
+config 
 controllers
 DESTINATION share/${PROJECT_NAME}/
 )

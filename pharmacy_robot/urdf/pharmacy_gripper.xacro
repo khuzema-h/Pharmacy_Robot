@@ -832,7 +832,7 @@
 		<robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
 		<robot_param>robot_description</robot_param>
         <robot_param_node>robot_state_publisher</robot_param_node>
-		<parameters>/home/vv/ENPM662/Project_2/project2_ws/src/pharmacy_robot/config/controllers.yaml</parameters>
+		<parameters>/home/khuzema/project_2_ws/src/Pharmacy_Robot/pharmacy_robot/config/control.yaml</parameters>
 	</plugin>
 		</gazebo>
 
