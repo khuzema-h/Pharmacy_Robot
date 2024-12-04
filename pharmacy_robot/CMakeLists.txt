@@ -27,6 +27,7 @@ install(
   PROGRAMS
   launch/gazebo_launch.py
   controllers/scanner.py
+  controllers/teleop.py
   DESTINATION lib/${PROJECT_NAME}
   )
 
