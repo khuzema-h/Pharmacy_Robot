@@ -1,0 +1,1 @@
+controller_joint_names: ['robot_base', 'vertical_rail', 'prismatic_base', 'prismatic_arm', 'gripper_base', 'robotiq_85_right_knuckle_joint', 'robotiq_85_left_knuckle_joint']
