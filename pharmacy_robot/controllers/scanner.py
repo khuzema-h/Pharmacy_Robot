@@ -78,7 +78,7 @@ class Scanner(Node):
 
             # Create a named window with a specific size
             cv2.namedWindow("Camera Feed With QR Codes", cv2.WINDOW_NORMAL)
-            cv2.resizeWindow("Camera Feed With QR Codes", 640, 480)
+            cv2.resizeWindow("Camera Feed With QR Codes", 1920, 1080)
 
             if retval and decoded_info:
                 for i, qr_code in enumerate(decoded_info):
@@ -111,25 +111,25 @@ class Scanner(Node):
                     )
 
                     # Perspective warping
-                    if pts.shape[0] == 4:  # Ensure there are 4 points for the QR code
-                        # Define the destination rectangle (top-down view of the QR code)
-                        width = 300  # Define the desired width of the warped image
-                        height = 300  # Define the desired height of the warped image
-                        dst_pts = np.array([
-                            [0, 0],  # Top-left corner
-                            [width - 1, 0],  # Top-right corner
-                            [width - 1, height - 1],  # Bottom-right corner
-                            [0, height - 1]  # Bottom-left corner
-                        ], dtype="float32")
+            #         if pts.shape[0] == 4:  # Ensure there are 4 points for the QR code
+            #             # Define the destination rectangle (top-down view of the QR code)
+            #             width = 300  # Define the desired width of the warped image
+            #             height = 300  # Define the desired height of the warped image
+            #             dst_pts = np.array([
+            #                 [0, 0],  # Top-left corner
+            #                 [width - 1, 0],  # Top-right corner
+            #                 [width - 1, height - 1],  # Bottom-right corner
+            #                 [0, height - 1]  # Bottom-left corner
+            #             ], dtype="float32")
 
-                        # Get the perspective transform matrix
-                        M = cv2.getPerspectiveTransform(pts.astype("float32"), dst_pts)
+            #             # Get the perspective transform matrix
+            #             M = cv2.getPerspectiveTransform(pts.astype("float32"), dst_pts)
 
-                        # Warp the QR code into a top-down view
-                        warped_qr = cv2.warpPerspective(frame, M, (width, height))
+            #             # Warp the QR code into a top-down view
+            #             warped_qr = cv2.warpPerspective(frame, M, (width, height))
 
-                        # Display the warped QR code in the window
-                        cv2.imshow("Warped QR Code", warped_qr)
+            #             # Display the warped QR code in the window
+            #             cv2.imshow("Warped QR Code", warped_qr)
 
             cv2.imshow("Camera Feed With QR Codes", frame)
             cv2.waitKey(1)
