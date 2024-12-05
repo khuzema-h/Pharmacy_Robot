@@ -413,76 +413,77 @@
     </link>
 
     <link name="robotiq_85_left_finger_tip_link">
-        <visual>
-            <geometry>
-                <mesh filename="package://pharmacy_robot/meshes/gripper/visual/left_finger_tip.dae" />
-            </geometry>
-        </visual>
-        <collision>
-            <geometry>
-                <mesh filename="package://pharmacy_robot/meshes/gripper/collision/left_finger_tip.stl" />
-            </geometry>
-            <surface>
-                <friction>
+    <visual>
+        <geometry>
+            <mesh filename="package://pharmacy_robot/meshes/gripper/visual/left_finger_tip.dae" />
+        </geometry>
+    </visual>
+    <collision>
+        <geometry>
+            <mesh filename="package://pharmacy_robot/meshes/gripper/collision/left_finger_tip.stl" />
+        </geometry>
+        <surface>
+            <friction>
                 <ode>
-                    <mu1>100000.0</mu1>
-                    <mu2>100000.0</mu2>
+                    <mu>10</mu>
+                    <mu2>10</mu2>
                 </ode>
-                </friction>
-                <contact>
+            </friction>
+            <contact>
                 <ode>
-                    <kp>1e+5</kp>
-                    <kd>1</kd>
-                    <soft_cfm>0</soft_cfm>
-                    <soft_erp>0.2</soft_erp>
+                    <kp>50000</kp> <!-- Spring stiffness -->
+                    <kd>5</kd>    <!-- Damping -->
+                    <soft_cfm>0.00001</soft_cfm> <!-- Constraint Force Mixing -->
+                    <soft_erp>0.8</soft_erp>    <!-- Error Reduction Parameter -->
                     <minDepth>0.002</minDepth>
-                    <maxVel>0</maxVel>
+                    <maxVel>0.1</maxVel>
                 </ode>
-                </contact>
-            </surface>
-        </collision>
-        <inertial>
-            <origin xyz="-0.01456706 -0.0008 0.01649701" rpy="0 0 0" />
-            <mass value="4.268588744e-02" />
-            <inertia ixx="1.048152e-05" iyy="1.197888e-05" izz="4.22784e-06" ixy="0.0" ixz="3.5232e-6" iyz="0.0" />
-        </inertial>
-    </link>
+            </contact>
+        </surface>
+    </collision>
+    <inertial>
+        <origin xyz="-0.01456706 -0.0008 0.01649701" rpy="0 0 0" />
+        <mass value="0.1" /> <!-- Increased for stability -->
+        <inertia ixx="1.2e-05" iyy="1.3e-05" izz="1.1e-05" ixy="0.0" ixz="3.5e-6" iyz="0.0" />
+    </inertial>
+</link>
 
-    <link name="robotiq_85_right_finger_tip_link">
-        <visual>
-            <geometry>
-                <mesh filename="package://pharmacy_robot/meshes/gripper/visual/right_finger_tip.dae" />
-            </geometry>
-        </visual>
-        <collision>
-            <geometry>
-                <mesh filename="package://pharmacy_robot/meshes/gripper/collision/right_finger_tip.stl" />
-            </geometry>
-            <surface>
-                <friction>
+<link name="robotiq_85_right_finger_tip_link">
+    <visual>
+        <geometry>
+            <mesh filename="package://pharmacy_robot/meshes/gripper/visual/right_finger_tip.dae" />
+        </geometry>
+    </visual>
+    <collision>
+        <geometry>
+            <mesh filename="package://pharmacy_robot/meshes/gripper/collision/right_finger_tip.stl" />
+        </geometry>
+        <surface>
+            <friction>
                 <ode>
-                    <mu1>100000.0</mu1>
-                    <mu2>100000.0</mu2>
+                    <mu>10</mu>
+                    <mu2>10</mu2>
                 </ode>
-                </friction>
-                <contact>
+            </friction>
+            <contact>
                 <ode>
-                    <kp>1e+5</kp>
-                    <kd>1</kd>
-                    <soft_cfm>0</soft_cfm>
-                    <soft_erp>0.2</soft_erp>
+                    <kp>50000</kp>
+                    <kd>5</kd>
+                    <soft_cfm>0.00001</soft_cfm>
+                    <soft_erp>0.8</soft_erp>
                     <minDepth>0.002</minDepth>
-                    <maxVel>0</maxVel>
+                    <maxVel>0.1</maxVel>
                 </ode>
-                </contact>
-            </surface>
-        </collision>
-        <inertial>
-            <origin xyz="0.01456706 5e-05 0.01649701" rpy="0 0 0" />
-            <mass value="4.268588744e-02" />
-            <inertia ixx="1.048152e-05" iyy="1.197888e-05" izz="4.22784e-06" ixy="0.0" ixz="-3.5232e-06" iyz="0.0" />
-        </inertial>
-    </link>
+            </contact>
+        </surface>
+    </collision>
+    <inertial>
+        <origin xyz="0.01456706 5e-05 0.01649701" rpy="0 0 0" />
+        <mass value="0.1" />
+        <inertia ixx="1.2e-05" iyy="1.3e-05" izz="1.1e-05" ixy="0.0" ixz="-3.5e-6" iyz="0.0" />
+    </inertial>
+</link>
+
 
 	<!-- ********** JOINTS ********** -->
 	
@@ -598,7 +599,7 @@
         <child link="robotiq_85_left_knuckle_link" />
         <axis xyz="0 -1 0" />
         <origin xyz="0.03060114 0.0 0.05490452" rpy="0 0 0" />
-        <limit lower="0.0" upper="0.8" velocity="0.5" effort="50" />
+        <limit lower="0.0" upper="0.8" velocity="0.5" effort="5" />
 		<dynamics damping="5" friction="3" />
     </joint>
 
@@ -607,7 +608,7 @@
         <child link="robotiq_85_right_knuckle_link" />
         <axis xyz="0 -1 0" />
         <origin xyz="-0.03060114 0.0 0.05490452" rpy="0 0 0" />
-        <limit lower="-0.8" upper="0.0" velocity="0.5" effort="50" />
+        <limit lower="-0.8" upper="0.0" velocity="0.5" effort="5" />
         <mimic joint="robotiq_85_left_knuckle_joint" multiplier="-1" />
 		<dynamics damping="5" friction="3" />
     </joint>
@@ -630,7 +631,7 @@
         <axis xyz="0 -1 0" />
         <origin xyz="0.0127 0.0 0.06142" rpy="0 0 0" />
         <mimic joint="robotiq_85_left_knuckle_joint" />
-		<dynamics damping="5" friction="3" />
+		<dynamics damping="5" friction="1" />
     </joint>
 
     <joint name="robotiq_85_right_inner_knuckle_joint" type="continuous">
@@ -639,7 +640,7 @@
         <axis xyz="0 -1 0" />
         <origin xyz="-0.0127 0.0 0.06142" rpy="0 0 0" />
         <mimic joint="robotiq_85_left_knuckle_joint" multiplier="-1" />
-		<dynamics damping="5" friction="3" />
+		<dynamics damping="5" friction="1" />
     </joint>
 
     <joint name="robotiq_85_left_finger_tip_joint" type="continuous">
@@ -648,7 +649,7 @@
         <axis xyz="0 -1 0" />
         <origin xyz="0.00563134 0.0 0.04718515" rpy="0 0 0" />
         <mimic joint="robotiq_85_left_knuckle_joint" multiplier="-1" />
-		<dynamics damping="5" friction="3" />
+		<dynamics damping="5" friction="1" />
     </joint>
 
     <joint name="robotiq_85_right_finger_tip_joint" type="continuous">
@@ -657,7 +658,7 @@
         <axis xyz="0 -1 0" />
         <origin xyz="-0.00563134 0.0 0.04718515" rpy="0 0 0" />
         <mimic joint="robotiq_85_left_knuckle_joint" />
-		<dynamics damping="5" friction="3" />
+		<dynamics damping="5" friction="1" />
     </joint>
 
 	<!--*********TRANSMISSIONS*************-->

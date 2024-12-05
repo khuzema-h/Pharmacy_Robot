@@ -7,6 +7,7 @@ from rclpy.qos import QoSProfile
 import sys
 import termios
 import tty
+import threading
 
 class TeleopRobot(Node):
     def __init__(self):
@@ -62,8 +63,8 @@ class TeleopRobot(Node):
         """
         if self.gripper_open:
             # Close gripper: Move both fingers to their respective closed positions
-            self.joint_positions[4] = -0.8  # robotiq_85_right_knuckle_joint
-            self.joint_positions[5] = 0.8   # robotiq_85_left_knuckle_joint
+            self.joint_positions[4] = -0.1 # robotiq_85_right_knuckle_joint
+            self.joint_positions[5] = 0.1   # robotiq_85_left_knuckle_joint
         else:
             # Open gripper: Move both fingers to their respective open positions
             self.joint_positions[4] = 0.0
@@ -99,6 +100,10 @@ def main():
     print("t: Toggle gripper (open/close)")
     print("Press 'Esc' to quit")
     
+    # Start a separate thread for spinning the node
+    spin_thread = threading.Thread(target=rclpy.spin, args=(teleop_robot,), daemon=True)
+    spin_thread.start()
+
     try:
         key_map = {
             'q': (0, 0.01), 'a': (0, -0.01),
@@ -118,8 +123,6 @@ def main():
                 teleop_robot.update_joint(joint_index, delta)
             elif key == 't':  # Toggle gripper
                 teleop_robot.toggle_gripper()
-            
-            rclpy.spin_once(teleop_robot, timeout_sec=0)
     except KeyboardInterrupt:
         print("Teleop Control interrupted.")
     finally:

@@ -72,7 +72,7 @@
     </scene>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-3.27388 1.3023 2.26498 0 0.429796 -0.934401</pose>
+        <pose>-1.19793 -0.814762 1.92793 0 0.553796 -0.91041</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -2826,10 +2826,10 @@
       <pose>3.3796 -0.993099 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>2763 288000000</sim_time>
-      <real_time>572 598016940</real_time>
-      <wall_time>1733348673 545686907</wall_time>
-      <iterations>570284</iterations>
+      <sim_time>3068 988000000</sim_time>
+      <real_time>309 710958966</real_time>
+      <wall_time>1733415374 835209046</wall_time>
+      <iterations>305700</iterations>
       <model name='Stop Sign'>
         <pose>3.80512 -1.0195 0 0 0 -1.63275</pose>
         <scale>1 1 1</scale>
@@ -2841,23 +2841,23 @@
         </link>
       </model>
       <model name='aspirin'>
-        <pose>-0.154382 -2.22488 1.31288 -1.54466 1.57079 0.025407</pose>
+        <pose>-0.461264 -2.08739 1.31288 0.197056 1.57079 1.76736</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-0.154382 -2.22488 1.31288 -1.54466 1.57079 0.025407</pose>
+          <pose>-0.461264 -2.08739 1.31288 0.197056 1.57079 1.76736</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.013722 0.018268 -0.038079 -0.487142 0.365913 0</acceleration>
-          <wrench>0.013722 0.018268 -0.038079 0 -0 0</wrench>
+          <acceleration>-0.0137 0.018285 -0.038079 -0.487585 -0.365318 0</acceleration>
+          <wrench>-0.0137 0.018285 -0.038079 0 -0 0</wrench>
         </link>
       </model>
       <model name='aspirin_0'>
-        <pose>1.42843 -2.17723 0.887614 -1.50242 1.57077 0.067556</pose>
+        <pose>-0.126295 -2.07558 0.912895 1.29772 1.57041 2.8677</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.42843 -2.17723 0.887614 -1.50242 1.57077 0.067556</pose>
+          <pose>-0.126295 -2.07558 0.912895 1.29772 1.57041 2.8677</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.013693 -0.01829 -0.038079 0.48771 0.36515 0</acceleration>
-          <wrench>0.013693 -0.01829 -0.038079 0 -0 0</wrench>
+          <acceleration>-0.013673 0.018282 -0.038082 -0.487675 -0.365032 1e-06</acceleration>
+          <wrench>-0.013673 0.018282 -0.038082 0 -0 0</wrench>
         </link>
       </model>
       <model name='bookshelf_custom'>
@@ -2901,10 +2901,10 @@
         </link>
       </model>
       <model name='bookshelf_custom_1_clone_clone'>
-        <pose>0.652916 -2.4107 0.054174 0 0 -3.12378</pose>
+        <pose>0.666345 -2.42055 0.054174 0 0 -3.12378</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.652916 -2.4107 0.054174 0 0 -3.12378</pose>
+          <pose>0.666345 -2.42055 0.054174 0 0 -3.12378</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -2931,23 +2931,13 @@
         </link>
       </model>
       <model name='flonase'>
-        <pose>1.44613 -2.16098 1.28761 2.77352 1.57078 -1.93975</pose>
+        <pose>1.44616 -2.13377 0.887614 1.5824 1.57078 -3.13083</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.44613 -2.16098 1.28761 2.77352 1.57078 -1.93975</pose>
+          <pose>1.44616 -2.13377 0.887614 1.5824 1.57078 -3.13083</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0.012963 -0.01725 -0.579967 0.460046 -0.345668 0</acceleration>
-          <wrench>-0.012963 -0.01725 -0.579967 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='flonase_0'>
-        <pose>-0.036072 -2.18733 0.912878 -1.32529 1.57077 0.244679</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-0.036072 -2.18733 0.912878 -1.32529 1.57077 0.244679</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.013724 0.018267 -0.038079 -0.487105 0.365951 0</acceleration>
-          <wrench>0.013724 0.018267 -0.038079 0 -0 0</wrench>
+          <acceleration>-0.013693 0.01829 -0.038079 -0.487718 -0.36514 0</acceleration>
+          <wrench>-0.013693 0.01829 -0.038079 0 -0 0</wrench>
         </link>
       </model>
       <model name='ground_plane'>
@@ -2961,287 +2951,61 @@
         </link>
       </model>
       <model name='paracetamol'>
-        <pose>0.764436 -2.22414 1.30167 -1.90667 1.57079 -0.336738</pose>
+        <pose>0.774376 -2.08103 1.30167 -2.2658 1.57078 -0.696011</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.764436 -2.22414 1.30167 -1.90667 1.57079 -0.336738</pose>
+          <pose>0.774376 -2.08103 1.30167 -2.2658 1.57078 -0.696011</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.013851 -0.018599 0.074281 0.493334 0.369341 4e-06</acceleration>
-          <wrench>0.013851 -0.018599 0.074281 0 -0 0</wrench>
+          <acceleration>0.01369 -0.018292 -0.038078 0.487773 0.365064 0</acceleration>
+          <wrench>0.01369 -0.018292 -0.038078 0 -0 0</wrench>
         </link>
       </model>
       <model name='paracetamol_expired'>
-        <pose>0.46657 -2.20756 1.30167 0.014921 1.57079 1.58447</pose>
+        <pose>-0.068257 -2.09417 1.31288 3.014 1.57078 -1.69925</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.46657 -2.20756 1.30167 0.014921 1.57079 1.58447</pose>
+          <pose>-0.068257 -2.09417 1.31288 3.014 1.57078 -1.69925</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0.013686 0.018295 -0.038079 -0.487863 -0.36495 0</acceleration>
-          <wrench>-0.013686 0.018295 -0.038079 0 -0 0</wrench>
+          <acceleration>-0.013981 -0.018555 0.144197 0.496183 -0.372813 2e-06</acceleration>
+          <wrench>-0.013981 -0.018555 0.144197 0 -0 0</wrench>
         </link>
       </model>
       <model name='tums'>
-        <pose>-0.441439 -2.22521 0.912877 -2.68009 1.57079 -1.10979</pose>
+        <pose>-0.397867 -2.04838 0.912889 0.093952 1.57056 1.66395</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-0.441439 -2.22521 0.912877 -2.68009 1.57079 -1.10979</pose>
+          <pose>-0.397867 -2.04838 0.912889 0.093952 1.57056 1.66395</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.014047 -0.018802 0.209359 0.499945 0.374577 2e-06</acceleration>
-          <wrench>0.014047 -0.018802 0.209359 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='tums_0'>
-        <pose>0.770222 -2.1288 0.901674 -1.66185 1.57079 -0.091885</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>0.770222 -2.1288 0.901674 -1.66185 1.57079 -0.091885</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -9.8 0 -0 0</wrench>
+          <acceleration>-0.012999 0.017362 -0.533253 -0.462884 -0.346639 0</acceleration>
+          <wrench>-0.012999 0.017362 -0.533253 0 -0 0</wrench>
         </link>
       </model>
       <model name='tylenol'>
-        <pose>-0.492235 -2.18299 1.31288 -1.36361 1.57078 0.206343</pose>
+        <pose>0.45542 -2.10727 0.901674 1.66637 1.57079 -3.04684</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-0.492235 -2.18299 1.31288 -1.36361 1.57078 0.206343</pose>
+          <pose>0.45542 -2.10727 0.901674 1.66637 1.57079 -3.04684</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.013724 0.018266 -0.038079 -0.487099 0.365966 -0</acceleration>
-          <wrench>0.013724 0.018266 -0.038079 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='tylenol_0'>
-        <pose>0.495292 -2.22014 0.901674 0.163771 1.57079 1.73372</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>0.495292 -2.22014 0.901674 0.163771 1.57079 1.73372</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.013724 0.018266 -0.03808 -0.487099 0.365972 -0</acceleration>
-          <wrench>0.013724 0.018266 -0.03808 0 -0 0</wrench>
+          <acceleration>-0.013693 0.018289 -0.038079 -0.487711 -0.365156 0</acceleration>
+          <wrench>-0.013693 0.018289 -0.038079 0 -0 0</wrench>
         </link>
       </model>
       <model name='vicks'>
-        <pose>1.87649 -2.17226 1.28761 3.11346 1.57077 -1.5998</pose>
+        <pose>1.72564 -2.08503 0.887614 0.013631 1.57077 1.5836</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.87649 -2.17226 1.28761 3.11346 1.57077 -1.5998</pose>
+          <pose>1.72564 -2.08503 0.887614 0.013631 1.57077 1.5836</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0.013725 -0.018264 -0.038083 0.487087 -0.365979 0</acceleration>
-          <wrench>-0.013725 -0.018264 -0.038083 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='vicks_0'>
-        <pose>1.77971 -2.2588 0.887617 -0.981235 1.57073 0.588739</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>1.77971 -2.2588 0.887617 -0.981235 1.57073 0.588739</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.013724 0.018264 -0.038087 -0.487099 0.365938 -0</acceleration>
-          <wrench>0.013724 0.018264 -0.038087 0 -0 0</wrench>
+          <acceleration>0.013724 0.018267 -0.038078 -0.4871 0.365961 0</acceleration>
+          <wrench>0.013724 0.018267 -0.038078 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
         <pose>0 0 10 0 -0 0</pose>
       </light>
     </state>
-    <model name='vicks'>
-      <pose>1.72564 -2.08506 1 2.4e-05 1.57 1.57002</pose>
-      <static>0</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.075 0.075 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vicks/meshes/mesh.dae</uri>
-              <scale>0.0125 0.0125 0.05</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <inertial>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-    <model name='tylenol'>
-      <pose>0.610449 -2.04836 1 2.4e-05 1.57 1.57002</pose>
-      <static>0</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.075 0.075 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://tylenol/meshes/mesh.dae</uri>
-              <scale>0.0125 0.0125 0.05</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <inertial>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-    <model name='tums'>
-      <pose>-0.397868 -2.0484 1 2.4e-05 1.57 1.57002</pose>
-      <static>0</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.075 0.075 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://tums/meshes/mesh.dae</uri>
-              <scale>0.0125 0.0125 0.05</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <inertial>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-    <model name='flonase'>
-      <pose>1.44616 -2.1338 1 2.4e-05 1.57 1.57002</pose>
-      <static>0</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.075 0.075 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://flonase/meshes/mesh.dae</uri>
-              <scale>0.0125 0.0125 0.05</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <inertial>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
     <model name='aspirin'>
-      <pose>-0.466143 -2.18989 1 2.4e-05 1.57 1.57002</pose>
+      <pose>-0.130377 -2.14853 1 2.4e-05 1.57 1.57002</pose>
       <static>0</static>
       <link name='link'>
         <collision name='collision'>
@@ -3250,19 +3014,24 @@
               <size>0.075 0.075 0.1</size>
             </box>
           </geometry>
-          <max_contacts>10</max_contacts>
           <surface>
             <contact>
               <ode/>
+              <stiffness>1e4</stiffness>
+              <damping>1e2</damping>
             </contact>
-            <bounce/>
             <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
               <torsional>
                 <ode/>
               </torsional>
-              <ode/>
             </friction>
+            <bounce/>
           </surface>
+          <max_contacts>10</max_contacts>
         </collision>
         <visual name='visual'>
           <geometry>
@@ -3289,8 +3058,8 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='paracetamol'>
-      <pose>0.772252 -2.07103 1 2.4e-05 1.57 1.57002</pose>
+    <model name='vicks'>
+      <pose>-0.125329 -2.15332 1 2.4e-05 1.57 1.57002</pose>
       <static>0</static>
       <link name='link'>
         <collision name='collision'>
@@ -3299,19 +3068,78 @@
               <size>0.075 0.075 0.1</size>
             </box>
           </geometry>
-          <max_contacts>10</max_contacts>
           <surface>
             <contact>
               <ode/>
+              <stiffness>1e4</stiffness>
+              <damping>1e2</damping>
             </contact>
-            <bounce/>
             <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
               <torsional>
                 <ode/>
               </torsional>
-              <ode/>
             </friction>
+            <bounce/>
           </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://vicks/meshes/mesh.dae</uri>
+              <scale>0.0125 0.0125 0.05</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='paracetamol'>
+      <pose>0.914755 -2.30856 1 2.4e-05 1.57 1.57002</pose>
+      <static>0</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.1</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+              <stiffness>1e4</stiffness>
+              <damping>1e2</damping>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
         </collision>
         <visual name='visual'>
           <geometry>
@@ -3338,8 +3166,8 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='tylenol_0'>
-      <pose>0.573548 -2.22023 1 2.4e-05 1.57 1.57002</pose>
+    <model name='tylenol'>
+      <pose>-0.157528 -2.18901 1 2.4e-05 1.57 1.57002</pose>
       <static>0</static>
       <link name='link'>
         <collision name='collision'>
@@ -3348,19 +3176,24 @@
               <size>0.075 0.075 0.1</size>
             </box>
           </geometry>
-          <max_contacts>10</max_contacts>
           <surface>
             <contact>
               <ode/>
+              <stiffness>1e4</stiffness>
+              <damping>1e2</damping>
             </contact>
-            <bounce/>
             <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
               <torsional>
                 <ode/>
               </torsional>
-              <ode/>
             </friction>
+            <bounce/>
           </surface>
+          <max_contacts>10</max_contacts>
         </collision>
         <visual name='visual'>
           <geometry>
@@ -3387,8 +3220,8 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='vicks_0'>
-      <pose>1.77971 -2.25883 1 2.4e-05 1.57 1.57002</pose>
+    <model name='flonase'>
+      <pose>-0.144566 -2.14009 1 2.4e-05 1.57 1.57002</pose>
       <static>0</static>
       <link name='link'>
         <collision name='collision'>
@@ -3397,166 +3230,24 @@
               <size>0.075 0.075 0.1</size>
             </box>
           </geometry>
-          <max_contacts>10</max_contacts>
           <surface>
             <contact>
               <ode/>
+              <stiffness>1e4</stiffness>
+              <damping>1e2</damping>
             </contact>
-            <bounce/>
             <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
               <torsional>
                 <ode/>
               </torsional>
-              <ode/>
             </friction>
+            <bounce/>
           </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://vicks/meshes/mesh.dae</uri>
-              <scale>0.0125 0.0125 0.05</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <inertial>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-    <model name='tums_0'>
-      <pose>0.770222 -2.12883 1 2.4e-05 1.57 1.57002</pose>
-      <static>0</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.075 0.075 0.1</size>
-            </box>
-          </geometry>
           <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://tums/meshes/mesh.dae</uri>
-              <scale>0.0125 0.0125 0.05</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <inertial>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-    <model name='aspirin_0'>
-      <pose>1.42843 -2.17726 1 2.4e-05 1.57 1.57002</pose>
-      <static>0</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.075 0.075 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://aspirin/meshes/mesh.dae</uri>
-              <scale>0.0125 0.0125 0.05</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <inertial>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-    <model name='flonase_0'>
-      <pose>-0.106272 -2.07233 1 2.4e-05 1.57 1.57002</pose>
-      <static>0</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.075 0.075 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
         </collision>
         <visual name='visual'>
           <geometry>
@@ -3584,7 +3275,7 @@
       </link>
     </model>
     <model name='paracetamol_expired'>
-      <pose>0.101773 -1.59177 1 2.4e-05 1.57 1.57002</pose>
+      <pose>-0.048213 -2.25886 1 2.4e-05 1.57 1.57002</pose>
       <static>0</static>
       <link name='link'>
         <collision name='collision'>
@@ -3593,24 +3284,137 @@
               <size>0.075 0.075 0.1</size>
             </box>
           </geometry>
-          <max_contacts>10</max_contacts>
           <surface>
             <contact>
               <ode/>
+              <stiffness>1e4</stiffness>
+              <damping>1e2</damping>
             </contact>
-            <bounce/>
             <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
               <torsional>
                 <ode/>
               </torsional>
-              <ode/>
             </friction>
+            <bounce/>
           </surface>
+          <max_contacts>10</max_contacts>
         </collision>
         <visual name='visual'>
           <geometry>
             <mesh>
               <uri>model://paracetamol_expired/meshes/mesh.dae</uri>
+              <scale>0.0125 0.0125 0.05</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='tums'>
+      <pose>-0.209971 -2.18576 1 2.4e-05 1.57 1.57002</pose>
+      <static>0</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.1</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+              <stiffness>1e4</stiffness>
+              <damping>1e2</damping>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://tums/meshes/mesh.dae</uri>
+              <scale>0.0125 0.0125 0.05</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='aspirin_0'>
+      <pose>-0.037308 -2.20292 1 2.4e-05 1.57 1.57002</pose>
+      <static>0</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.1</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+              <stiffness>1e4</stiffness>
+              <damping>1e2</damping>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://aspirin/meshes/mesh.dae</uri>
               <scale>0.0125 0.0125 0.05</scale>
             </mesh>
           </geometry>

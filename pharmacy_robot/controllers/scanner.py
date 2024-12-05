@@ -57,9 +57,9 @@ class Scanner(Node):
                     f"Depth: {qr_depth:.2f}m",
                     (cx, cy),
                     cv2.FONT_HERSHEY_SIMPLEX,
-                    1,
+                    3,
                     (0, 255, 0),
-                    1,
+                    3,
                 )
 
             cv2.imshow("Depth Camera", depth_colormap)
@@ -93,10 +93,10 @@ class Scanner(Node):
                     # Display decoded information and coordinates
                     cv2.putText(
                         frame,
-                        f"QR Code: {qr_code}",
+                        f"{qr_code}",
                         (int(qr_center[0]), int(qr_center[1] - 20)),
                         cv2.FONT_HERSHEY_SIMPLEX,
-                        0.6,
+                        2,
                         (0, 255, 0),
                         2,
                     )

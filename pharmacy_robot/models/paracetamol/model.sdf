@@ -10,6 +10,18 @@
             <size>0.075 0.075 0.1</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <stiffness>1e4</stiffness>
+            <damping>1e2</damping>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.8</mu> <!-- Primary friction coefficient -->
+              <mu2>0.8</mu2> <!-- Secondary friction coefficient -->
+            </ode>
+          </friction>
+        </surface>
       </collision>
 
       <visual name="visual">
