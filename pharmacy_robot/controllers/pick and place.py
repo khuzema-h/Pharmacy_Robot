@@ -1,117 +1,90 @@
 #!/usr/bin/env python3
+
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.msg import Pose
-from std_msgs.msg import String
-from moveit_commander import MoveGroupCommander, RobotCommander, PlanningSceneInterface
-from moveit_commander.conversions import pose_to_list
-from datetime import datetime
+from std_msgs.msg import Float64MultiArray
+from rclpy.qos import QoSProfile
+import time
 
-class PickAndPlace(Node):
+
+class TeleopRobot(Node):
     def __init__(self):
-        super().__init__("pick_and_place")
+        super().__init__('teleop_robot')
 
-        # MoveIt interfaces
-        self.robot = RobotCommander()
-        self.scene = PlanningSceneInterface()
-        self.group_name = "manipulator"  # Change to your MoveIt group name
-        self.move_group = MoveGroupCommander(self.group_name)
+        qos_profile = QoSProfile(depth=10)
+        self.joint_command_pub = self.create_publisher(Float64MultiArray, '/position_controller/commands', qos_profile)
 
-        # Subscriber to get QR code data from scanner
-        self.subscription = self.create_subscription(
-            String, "/qr_code_data", self.qr_code_callback, 10
+        # Initialize joint positions
+        self.joint_positions = [0.0] * 6 # Initialize all joints to 0.0
+        self.timer = self.create_timer(0.1, self.timer_callback)
+        self.get_logger().info("Teleop Robot node has started.")
+
+    def timer_callback(self):
+        """
+        Publishes the current joint positions periodically.
+        """
+        try:
+            command_msg = Float64MultiArray()
+            command_msg.data = [float(pos) for pos in self.joint_positions] # Ensure all are floats
+            self.joint_command_pub.publish(command_msg)
+        except Exception as e:
+            self.get_logger().error(f"Error in timer callback: {e}")
+
+    def move_to_checkpoint(self, positions, gripper_closed, delay):
+        """
+        Moves the robot to the specified joint positions and gripper state.
+
+        Args:
+            positions (list): Joint positions [joint0, joint1, joint2, joint3, joint4, joint5].
+            gripper_closed (bool): True to close the gripper, False to open it.
+            delay (float): Time to wait after reaching the position (in seconds).
+        """
+        try:
+            # Validate and assign joint positions
+            for i, pos in enumerate(positions):
+                self.joint_positions[i] = float(pos) # Explicitly convert each value to float
+
+            # Update gripper state
+            if gripper_closed:
+                self.joint_positions[4] = -0.1 # robotiq_85_right_knuckle_joint (close)
+                self.joint_positions[5] = 0.1 # robotiq_85_left_knuckle_joint (close)
+            else:
+                self.joint_positions[4] = 0.0 # robotiq_85_right_knuckle_joint (open)
+                self.joint_positions[5] = 0.0 # robotiq_85_left_knuckle_joint (open)
+
+            self.get_logger().info(f"Moving to position: {self.joint_positions} | Gripper {'closed' if gripper_closed else 'open'}")
+            time.sleep(delay) # Wait for the specified delay
+        except ValueError as ve:
+            self.get_logger().error(f"Invalid joint position value: {ve}")
+        except Exception as e:
+            self.get_logger().error(f"Error in move_to_checkpoint: {e}")
+
+
+def main():
+    rclpy.init()
+    teleop_robot = TeleopRobot()
+
+    try:
+        # Move to the 1st checkpoint
+        teleop_robot.move_to_checkpoint(
+            positions=[1.35, 0.0, 0.35, 0.08, 0.0, 0.0],
+            gripper_closed=True,
+            delay=2.0 # Wait for 2 seconds at this position
         )
 
-        # Internal state
-        self.target_pose = None
-        self.qr_data = None
+        # Move to the 2nd checkpoint
+        teleop_robot.move_to_checkpoint(
+            positions=[2.4, 1.57, 0.0, 0.0, 0.0, 0.0],
+            gripper_closed=False,
+            delay=2.0 # Wait for 2 seconds at this position
+        )
 
-    def qr_code_callback(self, msg):
-        """Handle QR code data."""
-        self.qr_data = msg.data
-        self.get_logger().info(f"Received QR Code data: {self.qr_data}")
-
-        # Extract expiration date and validate
-        if self.is_valid_tablet(self.qr_data):
-            self.get_logger().info("Tablet is valid. Picking and placing in the bin.")
-            self.pick_and_place_action()
-        else:
-            self.get_logger().info("Tablet is expired. Skipping action.")
-
-    def is_valid_tablet(self, qr_data):
-        """Check if the tablet has expired."""
-        try:
-            # Assuming QR data contains expiration date in "YYYY-MM-DD" format
-            expiration_date = datetime.strptime(qr_data, "%Y-%m-%d")
-            today = datetime.today()
-            return expiration_date >= today
-        except ValueError:
-            self.get_logger().error("Invalid QR data format. Unable to parse date.")
-            return False
-
-    def pick_and_place_action(self):
-        """Perform pick and place action."""
-
-        # Set the target pose for the picking action
-        self.get_logger().info("Moving to pick position...")
-        pick_pose = Pose()
-        pick_pose.position.x = 0.5  # Set to shelf x-coordinate
-        pick_pose.position.y = 0.0  # Set to shelf y-coordinate
-        pick_pose.position.z = 0.2  # Set to shelf z-coordinate
-        pick_pose.orientation.w = 1.0
-
-        self.move_to_pose(pick_pose)
-
-        # Simulate gripper closing
-        self.get_logger().info("Closing gripper...")
-        self.close_gripper()
-
-        # Set the target pose for the placing action
-        self.get_logger().info("Moving to place position...")
-        place_pose = Pose()
-        place_pose.position.x = 0.0  # Set to bin x-coordinate
-        place_pose.position.y = 0.5  # Set to bin y-coordinate
-        place_pose.position.z = 0.2  # Set to bin z-coordinate
-        place_pose.orientation.w = 1.0
-
-        self.move_to_pose(place_pose)
-
-        # Simulate gripper opening
-        self.get_logger().info("Opening gripper...")
-        self.open_gripper()
-
-        # Return to home position
-        self.get_logger().info("Returning to home position...")
-        self.move_group.set_named_target("home")
-        self.move_group.go(wait=True)
-
-    def move_to_pose(self, target_pose):
-        """Move the manipulator to the target pose."""
-        self.move_group.set_pose_target(target_pose)
-        success = self.move_group.go(wait=True)
-        self.move_group.stop()
-        self.move_group.clear_pose_targets()
-
-        if not success:
-            self.get_logger().error("Failed to reach the target pose.")
-
-    def close_gripper(self):
-        """Simulate gripper closing."""
-        # Replace with actual gripper command
-        self.get_logger().info("Gripper closed.")
-
-    def open_gripper(self):
-        """Simulate gripper opening."""
-        # Replace with actual gripper command
-        self.get_logger().info("Gripper opened.")
+    except KeyboardInterrupt:
+        print("Teleop Robot interrupted.")
+    finally:
+        teleop_robot.destroy_node()
+        rclpy.shutdown()
 
 
-def main(args=None):
-    rclpy.init(args=args)
-    node = PickAndPlace()
-    rclpy.spin(node)
-    rclpy.shutdown()
-
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
