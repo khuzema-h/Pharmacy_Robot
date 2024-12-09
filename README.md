@@ -51,7 +51,7 @@ ros2 run pharmacy_robot teleop.py
 ```
 ![Screenshot from 2024-12-08 20-18-28](https://github.com/user-attachments/assets/29257812-2cc9-4bdd-ad53-7fa47363e69b)
 
-###RVIZ Visualization
+### RVIZ Visualization
 
 Open a Separate Terminal Window to visualize the camera feed in Rviz.
 
