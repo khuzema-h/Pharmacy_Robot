@@ -41,7 +41,15 @@ Open a Separate Terminal Window after Launching the robot in Gazebo to run the S
 ```sh
 ros2 run pharmacy_robot scanner.py
 ```
-![image](https://github.com/user-attachments/assets/ddaca3d2-5588-45ae-a0d4-5ac14c74bd46)
+![Screenshot from 2024-12-05 13-11-17](https://github.com/user-attachments/assets/76e933a2-a8f4-4c31-a25e-77d2407a179c)
+## Run Teleop Controller:
+
+Open a Separate Terminal Window after Launching the robot in Gazebo and run the following node for teleop: 
+
+```sh
+ros2 run pharmacy_robot teleop.py
+```
+![Screenshot from 2024-12-08 20-18-28](https://github.com/user-attachments/assets/29257812-2cc9-4bdd-ad53-7fa47363e69b)
 
 Open a Separate Terminal Window to visualize the camera feed in Rviz.
 
@@ -51,22 +59,11 @@ Run rviz:
 rviz2
 ```
 Add -> By Topic -> image
+![Screenshot from 2024-12-07 17-15-16](https://github.com/user-attachments/assets/1113ee50-6765-4d94-b571-1c5382e9414e)
 
 
-### Launch the Gripper:
+## To visualize the joints in RVIZ: 
 
-In a new gazebo world, launch the gripper using: 
-
-```sh
-ros2 launch robotiq_2f_140_gripper_visualization gazebo_launch.py
-```
-The robot may not show in gazebo. To visualize in Rviz and controll the gripper:
-
-In a separate terminal run Rviz:
-
-```sh
-rviz2
-```
 In another terminal run:
 
 ```sh
@@ -74,8 +71,10 @@ ros2 run joint_state_publisher_gui joint_state_publisher_gui
 ```
 In Rviz:
 Add -> Robot Model 
-In the side panel set the following parameters:
-![image](https://github.com/user-attachments/assets/d1e3c82f-75c8-4ae0-8d54-6e87151feda0)
+
+![Screenshot from 2024-12-07 17-09-45](https://github.com/user-attachments/assets/0bbf78a7-9f73-44f3-96ec-b585f3e7ee4a)
+
+
 
 
 
