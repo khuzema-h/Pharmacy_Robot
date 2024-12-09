@@ -1,0 +1,29 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000 # update rate in Hz
+
+    use_sim_time: true
+
+    position_controller:
+      type: position_controllers/JointGroupPositionController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+#position controller
+position_controller:
+  ros__parameters:
+    joints:
+      - robot_base #upper limit: 2.4 lower limit:  0
+      - vertical_rail #upper limit: 1.57 lower limit: -3.14
+      - prismatic_base #upper limit: 0.75 lower limit: 0
+      - prismatic_arm #upper limit: 0.5 lower limit: 0
+      - robotiq_85_right_knuckle_joint #upper limit: 0 lower limit: -0.8
+      - robotiq_85_left_knuckle_joint #upper limit: 0.8  lower limit: 0
+    interface_name: position
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+      - effort

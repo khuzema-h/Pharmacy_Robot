@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="vicks">
+      <pose>0 0 1 0 1.57 1.57</pose>
+    <static>false</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.075 0.075 0.1</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <stiffness>1e4</stiffness>
+            <damping>1e2</damping>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.8</mu> <!-- Primary friction coefficient -->
+              <mu2>0.8</mu2> <!-- Secondary friction coefficient -->
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://vicks/meshes/mesh.dae</uri>
+            <scale>0.0125 0.0125 0.05</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
