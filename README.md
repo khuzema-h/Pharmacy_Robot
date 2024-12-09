@@ -26,7 +26,7 @@ You will have to do this in every new session in which you wish to use these exa
 ```sh
 source ~/dev_ws/install/local_setup.sh
 ```
-#### Disclaimer
+## Disclaimer
 ### Due to an unresolved bug we encountered in the path for the control.yaml file, you will manually have to naviagte to line 837 in the pharmacy_gripper.xacro file in the URDF folder and update the path of the control.yaml file for your PC. We apologize for the inconvenience
 
 ### Launch Robot in World
